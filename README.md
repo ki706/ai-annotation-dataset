@@ -116,20 +116,19 @@ This framework is designed to scale to large datasets (1,000+ entries) while mai
 data-annotation-project/
 │
 ├── data/
-│ ├── raw.json
-│ ├── labeled.json
+│   ├── raw.json
+│   └── labeled.json
 │
 ├── review/
-│ ├── review_log.json
+│   └── review_log.json
 │
 ├── guidelines/
-│ ├── ANNOTATION_GUIDELINES.md
+│   └── ANNOTATION_GUIDELINES.md
 │
 ├── scripts/
-│ ├── validate.py
+│   └── validate.py
 │
 └── README.md
-
 
 ---
 
