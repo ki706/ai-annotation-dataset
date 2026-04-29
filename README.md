@@ -1,55 +1,148 @@
-# Text Data Annotation Project
+# Structured Text Annotation System with Quality Review Layer
 
 ## Overview
-This project contains a structured text dataset annotated for sentiment analysis and category classification.  
-The goal is to demonstrate consistent data labeling, rule-following, and basic quality assurance (QA) practices commonly used in AI training data pipelines.
+This project presents a structured text annotation dataset designed to simulate real-world data labeling workflows.
+
+It focuses on:
+- consistent labeling across noisy data
+- handling ambiguous cases
+- structured quality review of annotations
+- rule-based decision making
 
 ---
 
 ## Objective
-To simulate a real-world data annotation workflow by:
-- Labeling customer feedback texts
-- Assigning sentiment categories
-- Classifying feedback types
-- Performing basic QA validation for consistency and correctness
+To build a consistent and scalable text labeling system that includes:
+- sentiment classification
+- category labeling
+- handling mixed and ambiguous inputs
+- structured review of annotation accuracy
 
 ---
 
-## Dataset Description
+## Dataset
 
-- Total samples: 50
-- Data type: Customer feedback text
-- Sources: Synthetic / manually created realistic examples
+- Total samples: 60–100 text entries
+- Domain: Customer feedback
+
+### Data Types Included:
+- Clear cases (obvious sentiment and category)
+- Mixed cases (multiple signals)
+- Ambiguous cases (uncertain meaning)
 
 ---
 
-## Labeling Schema
+## Label Structure
 
-Each data entry includes:
+Each entry contains:
 
-### 1. Sentiment
+### Sentiment
 - Positive
 - Negative
 - Neutral
 
-### 2. Category
+### Category
 - Product Quality
 - Delivery
 - Customer Service
 - Price / Value
 
+### Secondary Category (optional)
+Used when a second strong signal exists.
+
 ---
 
-## Example Annotation
+## Review Fields
 
-```json
-{
-  "text": "Delivery was late and package was damaged",
-  "sentiment": "negative",
-  "category": "delivery",
-  "qa": {
-    "correct_label": true,
-    "confidence": "high",
-    "notes": "Clear delivery issue and negative sentiment"
-  }
-}
+Each annotation includes a review section to ensure consistency and correctness:
+
+- is_correct: true / false
+- confidence_level: high / medium / low
+- issue_type:
+  - incorrect label
+  - inconsistent labeling
+  - unclear case
+  - missing context
+- decision:
+  - accept
+  - revise
+  - unclear
+- notes: short explanation
+
+---
+
+## Ambiguity Handling Rules
+
+### Dominant Signal Rule
+When multiple signals exist, choose the strongest user experience.
+
+Example:
+> “Product is good but delivery was slow”  
+→ Category: Delivery  
+→ Sentiment: Negative
+
+---
+
+### Neutral Rule
+Use Neutral when:
+- no clear emotional direction exists
+- sentiment is balanced or unclear
+
+---
+
+### Secondary Category Rule
+Used only when:
+- two signals are equally strong
+- both are important to user experience
+
+---
+
+## Consistency Rules
+
+- similar cases must have similar labels
+- category selection must follow defined logic
+- review layer must identify inconsistencies
+
+---
+
+## Scalability
+
+This framework is designed to scale to large datasets (1,000+ entries) while maintaining consistent labeling logic.
+
+---
+
+## Folder Structure
+
+data-annotation-project/
+│
+├── data/
+│ ├── raw.json
+│ ├── labeled.json
+│
+├── review/
+│ ├── review_log.json
+│
+├── guidelines/
+│ ├── ANNOTATION_GUIDELINES.md
+│
+├── scripts/
+│ ├── validate.py
+│
+└── README.md
+
+
+---
+
+## Skills Demonstrated
+
+- structured data labeling
+- consistency enforcement
+- ambiguity resolution
+- dataset design
+- review-based validation system
+- scalable annotation logic
+
+---
+
+## Project Status
+Completed structured annotation system with review layer and ambiguity handling framework.
