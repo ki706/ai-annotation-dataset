@@ -111,7 +111,19 @@ This framework is designed to scale to large datasets (1,000+ entries) while mai
 
 ---
 
-## Folder Structure
+## Skills Demonstrated
+
+- structured data labeling
+- consistency enforcement
+- ambiguity resolution
+- dataset design
+- review-based validation system
+- scalable annotation logic
+
+---
+
+## Project Status
+Completed structured annotation system with review layer and ambiguity handling framework.
 
 ## Folder Structure
 
@@ -132,18 +144,3 @@ data-annotation-project/
 │   └── validate.py
 │
 └── README.md
----
-
-## Skills Demonstrated
-
-- structured data labeling
-- consistency enforcement
-- ambiguity resolution
-- dataset design
-- review-based validation system
-- scalable annotation logic
-
----
-
-## Project Status
-Completed structured annotation system with review layer and ambiguity handling framework.
