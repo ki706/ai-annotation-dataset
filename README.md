@@ -113,6 +113,9 @@ This framework is designed to scale to large datasets (1,000+ entries) while mai
 
 ## Folder Structure
 
+## Folder Structure
+
+```bash
 data-annotation-project/
 │
 ├── data/
@@ -129,7 +132,6 @@ data-annotation-project/
 │   └── validate.py
 │
 └── README.md
-
 ---
 
 ## Skills Demonstrated
