@@ -43,7 +43,31 @@ data/
 ```
 
 ---
+## Repository Structure
 
+```bash
+structured-text-annotation-system/
+│
+├── data/
+│   ├── raw.json
+│   └── labeled.json
+│
+├── review/
+│   └── review_log.json
+│
+├── guidelines/
+│   └── ANNOTATION_GUIDELINES.md
+│
+├── documentation/
+│   ├── CONSISTENCY_CHECKS.md
+│   └── CORRECTIONS.md
+│
+├── scripts/
+│   └── validate.py
+│
+└── README.md
+```
+---
 ## Annotation Framework
 
 ### Sentiment Classes
