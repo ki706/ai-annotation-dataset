@@ -1,146 +1,101 @@
-# Structured Text Annotation System with Quality Review Layer
+# Structured Text Annotation System
 
 ## Overview
-This project presents a structured text annotation dataset designed to simulate real-world data labeling workflows.
 
-It focuses on:
-- consistent labeling across noisy data
-- handling ambiguous cases
-- structured quality review of annotations
-- rule-based decision making
+This repository contains a structured text annotation dataset designed to simulate real-world data labeling workflows with ambiguity, conflicting signals, and decision-based labeling logic.
+
+The system reflects production-style annotation where consistency, rules, and validation are critical.
 
 ---
 
-## Objective
-To build a consistent and scalable text labeling system that includes:
-- sentiment classification
-- category labeling
-- handling mixed and ambiguous inputs
-- structured review of annotation accuracy
+## Key Features
+
+- Multi-class text annotation (sentiment + category)
+- Ambiguity-aware labeling system
+- Rule-based decision framework
+- Consistency enforcement across dataset
+- Annotation correction tracking
+- Lightweight validation script for data integrity
 
 ---
 
-## Dataset
+## Problem This Project Solves
 
-- Total samples: 60–100 text entries
-- Domain: Customer feedback
+Real-world text data is often:
+- ambiguous
+- inconsistent
+- noisy
+- context-dependent
 
-### Data Types Included:
-- Clear cases (obvious sentiment and category)
-- Mixed cases (multiple signals)
-- Ambiguous cases (uncertain meaning)
-
----
-
-## Label Structure
-
-Each entry contains:
-
-### Sentiment
-- Positive
-- Negative
-- Neutral
-
-### Category
-- Product Quality
-- Delivery
-- Customer Service
-- Price / Value
-
-### Secondary Category (optional)
-Used when a second strong signal exists.
+This project demonstrates how to structure annotation logic so that:
+- different annotators produce consistent results
+- labeling decisions follow repeatable rules
+- dataset quality can be validated programmatically
 
 ---
 
-## Review Fields
+## Dataset Structure
 
-Each annotation includes a review section to ensure consistency and correctness:
-
-- is_correct: true / false
-- confidence_level: high / medium / low
-- issue_type:
-  - incorrect label
-  - inconsistent labeling
-  - unclear case
-  - missing context
-- decision:
-  - accept
-  - revise
-  - unclear
-- notes: short explanation
+data/
+├── raw.json        # Original unprocessed text samples
+├── labeled.json    # Structured annotations with labels + review fields
 
 ---
 
-## Ambiguity Handling Rules
+## Annotation Framework
 
-### Dominant Signal Rule
-When multiple signals exist, choose the strongest user experience.
+### Sentiment Classes
+- positive
+- negative
+- neutral
 
-Example:
-> “Product is good but delivery was slow”  
-→ Category: Delivery  
-→ Sentiment: Negative
+### Categories
+- product quality
+- delivery
+- customer service
+- price/value
 
----
+### Decision Principle
 
-### Neutral Rule
-Use Neutral when:
-- no clear emotional direction exists
-- sentiment is balanced or unclear
+All labeling decisions follow a single rule:
 
----
-
-### Secondary Category Rule
-Used only when:
-- two signals are equally strong
-- both are important to user experience
+> The dominant user experience determines the final label.
 
 ---
 
-## Consistency Rules
+## Handling Ambiguity
 
-- similar cases must have similar labels
-- category selection must follow defined logic
-- review layer must identify inconsistencies
+When multiple signals exist:
 
----
-
-## Scalability
-
-This framework is designed to scale to large datasets (1,000+ entries) while maintaining consistent labeling logic.
+- prioritize strongest user impact
+- avoid splitting sentiment incorrectly
+- use secondary category only when necessary
 
 ---
 
-## Skills Demonstrated
 
-- structured data labeling
-- consistency enforcement
-- ambiguity resolution
-- dataset design
-- review-based validation system
-- scalable annotation logic
+## Quality Control System
+
+This dataset includes structured review tracking:
+
+- validation of annotation consistency
+- detection of ambiguous cases
+- correction history logging
+- confidence level tracking
 
 ---
 
-## Project Status
-Completed structured annotation system with review layer and ambiguity handling framework.
+## Validation Tool
 
-## Folder Structure
+A lightweight Python script ensures dataset integrity.
+
+It checks:
+- missing fields
+- invalid sentiment values
+- duplicate IDs
+- empty text entries
+
+Run:
 
 ```bash
-data-annotation-project/
-│
-├── data/
-│   ├── raw.json
-│   └── labeled.json
-│
-├── review/
-│   └── review_log.json
-│
-├── guidelines/
-│   └── ANNOTATION_GUIDELINES.md
-│
-├── scripts/
-│   └── validate.py
-│
-└── README.md
+python scripts/validate.py
