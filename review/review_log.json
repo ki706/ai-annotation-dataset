@@ -1,0 +1,82 @@
+[
+  {
+    "id": 4,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Product failure dominates despite fast delivery",
+    "confidence_level": "high"
+  },
+  {
+    "id": 10,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "ambiguity",
+    "notes": "Delayed support outweighed final resolution",
+    "confidence_level": "medium"
+  },
+  {
+    "id": 18,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Price dissatisfaction clearly expressed",
+    "confidence_level": "high"
+  },
+  {
+    "id": 21,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Delivery delay is primary complaint",
+    "confidence_level": "high"
+  },
+  {
+    "id": 28,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "ambiguity",
+    "notes": "Mixed sentiment between price and quality",
+    "confidence_level": "medium"
+  },
+  {
+    "id": 33,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Support failed to resolve issue",
+    "confidence_level": "high"
+  },
+  {
+    "id": 35,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "ambiguity",
+    "notes": "Delivery issue slightly outweighed positive product experience",
+    "confidence_level": "medium"
+  },
+  {
+    "id": 41,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Damaged item is primary negative factor",
+    "confidence_level": "high"
+  },
+  {
+    "id": 46,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "ambiguity",
+    "notes": "Minor defects reduce overall positive sentiment",
+    "confidence_level": "medium"
+  },
+  {
+    "id": 59,
+    "action": "label_review",
+    "status": "accepted",
+    "issue_type": "none",
+    "notes": "Product defects dominate delivery success",
+    "confidence_level": "high"
+  }
+]
