@@ -35,10 +35,12 @@ This project demonstrates how to structure annotation logic so that:
 ---
 
 ## Dataset Structure
+```bash
 
 data/
 ├── raw.json        # Original unprocessed text samples
 ├── labeled.json    # Structured annotations with labels + review fields
+```
 
 ---
 
